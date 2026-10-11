@@ -30,4 +30,4 @@ Cột quyết định và lý do được soạn giúp theo nội dung critique;
 ## Bằng chứng cần lưu
 
 - Ảnh S4 và S17 **trước** khi sửa: lấy từ Figma version history hoặc project Stitch, lưu vào `assets/stitch/` (`mentor-v2/s04-no-team/screen.png`, `mentor-v2/s17-discard-dialog/screen.png` (đã có sẵn: là output gốc của Stitch)). `TODO`
-- Ảnh **sau** khi sửa: xuất từ Figma, lưu vào `assets/figma/` (`s04-after.png`, `s17-after.png`). `TODO`
+- Ảnh **sau** khi sửa: xuất từ Figma, lưu ở `assets/figma/03-final-ui/` (`s04-no-team.png`, `s17-discard-dialog.png`).
