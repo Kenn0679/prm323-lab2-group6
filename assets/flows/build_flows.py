@@ -55,7 +55,7 @@ build("flow-a","Flow A - Duyệt gợi ý AI cho một lớp",[
  ("a0","start","START\nMentor mở app",0,0),
  ("a1","screen","S1 Sign in\nNhập email",0,1),
  ("a2","dec","Email\nhợp lệ?",0,2),("a2e","err","S19 Sign in, lỗi\n'Enter a valid email'",1,2),
- ("a3","screen","S2 My classes\nChọn một lớp",0,3),
+ ("a3","screen","S2 My classes\nChọn một lớp",0,3),("a3i","screen","S22 Import class list\nChọn file MSSV, lớp, nhóm, ngành",1,3),("a3r","screen","S23 Import result\nẨn SV đã có nhóm, nhóm đủ 6",1,4),
  ("a4","screen","S3 Class detail\nXem số SV chưa có nhóm",0,4),
  ("a5","screen","S4 No team\nXem danh sách, lọc theo ngành",0,5),
  ("a6","screen","S8 AI matching\nBấm Match with AI, chờ",0,6),
@@ -65,21 +65,21 @@ build("flow-a","Flow A - Duyệt gợi ý AI cho một lớp",[
  ("a10","screen","S12 Approve dialog\nBấm Approve",0,10),
  ("a11","screen","S14 Proposals\nSnackbar 'Approved'",0,11),
  ("a12","end","END\nNhóm đã duyệt, SV được báo",0,12)],
- [("a0","a1",""),("a1","a2",""),("a2","a3","Hợp lệ"),("a2","a2e","Sai"),("a2e","a1","Nhập lại"),("a3","a4",""),("a4","a5",""),("a5","a6",""),
+ [("a0","a1",""),("a1","a2",""),("a2","a3","Hợp lệ"),("a2","a2e","Sai"),("a2e","a1","Nhập lại"),("a3","a4",""),("a3","a3i","Import"),("a3i","a3r",""),("a3r","a4","Mở lớp"),("a4","a5",""),("a5","a6",""),
   ("a6","a7",""),("a7","a8","Có"),("a7","a7e","Không"),("a7e","a6","Try again"),("a8","a9",""),("a9","a10",""),("a10","a11","Approve"),("a11","a12","")])
 
 build("flow-b","Flow B - Thêm thành viên vào đề xuất",[
  ("b0","start","START\nMentor mở tab Proposals",0,0),
  ("b1","screen","S9 Proposals\nChọn một nhóm đề xuất",0,1),
  ("b2","screen","S10 Proposal detail\nBấm Add member",0,2),
- ("b3","screen","S11 Add member\nTick SV muốn thêm",0,3),("b3s","screen","S7 Student detail\nXem kỹ năng, lịch rảnh",1,3),
+ ("b3","screen","S11 Add member\nTick SV muốn thêm",0,3),("b3s","screen","S7 Student detail\nXem MSSV, lớp, ngành",1,3),
  ("b4","dec","Tổng ≤ 6\nngười?",0,4),("b4e","err","S13 Add member lỗi\n'Max 6 members', khóa nút Add",1,4),
- ("b5","screen","S10 Proposal detail\nĐã cập nhật thành viên",0,5),
+ ("b5","screen","S10 Proposal detail\nĐã cập nhật thành viên",0,5),("b5r","screen","S24 Remove member\nXác nhận bỏ một thành viên",1,5),("b5b","err","S25 Approve blocked\nDưới 5 người: khóa Approve",1,6),
  ("b6","screen","S12 Approve dialog\nBấm Approve",0,6),
  ("b7","screen","S14 Proposals\nSnackbar 'Approved'",0,7),
  ("b8","end","END\nNhóm đủ 4-6 người đã duyệt",0,8)],
  [("b0","b1",""),("b1","b2",""),("b2","b3",""),("b3","b3s","Xem hồ sơ"),("b3s","b3","Quay lại"),("b3","b4",""),("b4","b5","Có"),("b4","b4e","Không"),("b4e","b3","Bỏ bớt",16),
-  ("b5","b6",""),("b6","b7","Approve"),("b7","b8","")])
+  ("b5","b6",""),("b5","b5r","Remove"),("b5r","b5b","Remove"),("b5b","b5","Add member",16),("b6","b7","Approve"),("b7","b8","")])
 
 build("flow-c","Flow C - AI không ghép được, mentor ghép tay",[
  ("c0","start","START\nBấm Match with AI ở S3",0,0),

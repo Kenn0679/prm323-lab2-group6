@@ -1,6 +1,6 @@
 ---
 name: TeamUp EXE
-description: Android app for EXE mentors and lecturers. AI suggests how to place students without a team into teams missing 1-2 specialist members, so each small startup team reaches 4-6 members across majors. The mentor reviews and approves.
+description: Android app for EXE mentors and lecturers. AI suggests how to place students without a team into teams missing 1-2 specialist members, so each small startup team reaches 5-6 members across majors. The mentor reviews and approves.
 colors:
   primary: "#B23E00"
   on-primary: "#FFFFFF"

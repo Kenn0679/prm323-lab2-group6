@@ -106,7 +106,7 @@ Mỗi màn có đủ 6 mục: layout, components, states, interactions, navigati
 1. **Layout:** Scaffold(AppBar title, body: ListView(padding 16, separated 16) of Card, bottomNavigationBar: NavigationBar). Cuộn dọc, AppBar và NavigationBar cố định.
 2. **Components:** App bar default, Card (tappable), Navigation (Classes selected).
 3. **States:** populated; loading (skeleton thẻ); empty (chưa có lớp); error (offline).
-4. **User interactions:** Chạm thẻ mở S3. Kéo xuống để làm mới.
+4. **User interactions:** Chạm thẻ mở S3. Nút 'Import class list' mở S22. Kéo xuống để làm mới.
 5. **Navigation:** Tab gốc. Chạm thẻ sang S3. Back thoát app.
 6. **Important UI constraints:** Mỗi thẻ cao ≥ 96dp, toàn thẻ là vùng chạm; tên lớp 1 dòng ellipsis; số hiển thị tabular. Vùng chạm ≥ 48dp, chữ ≥ 14sp; trên màn ≥ 600dp theo mục "Màn rộng".
 
@@ -115,7 +115,7 @@ Mỗi màn có đủ 6 mục: layout, components, states, interactions, navigati
 1. **Layout:** Scaffold(AppBar back + title, body: Column: Row(3 × Expanded stat) với VerticalDivider, ListTile × 2; bottom: Padding(16) FilledButton sticky).
 2. **Components:** App bar (back), Button primary, list row.
 3. **States:** populated; loading; error.
-4. **User interactions:** Chạm hàng sang S4 hoặc S5. Match with AI sang S8. Nếu 0 SV chưa có nhóm thì nút bị khóa (disabled).
+4. **User interactions:** Chạm hàng sang S4 hoặc S5. Match with AI sang S8 (ghép theo ngành, nhóm 5-6 người). Nếu 0 SV chưa có nhóm thì nút bị khóa (disabled).
 5. **Navigation:** Từ S2. Back về S2. Match with AI sang S8.
 6. **Important UI constraints:** Số 24sp, nhãn 14sp; hàng cao ≥ 56dp; nút sticky cách đáy 16dp. Vùng chạm ≥ 48dp, chữ ≥ 14sp; trên màn ≥ 600dp theo mục "Màn rộng".
 
@@ -133,7 +133,7 @@ Mỗi màn có đủ 6 mục: layout, components, states, interactions, navigati
 1. **Layout:** Scaffold(AppBar back, body: ListView of Card, sticky FilledButton).
 2. **Components:** App bar (back), Card, ô ngành (đầy/mở), Button primary.
 3. **States:** populated; loading; empty.
-4. **User interactions:** Chạm thẻ không mở gì (chỉ xem). Match with AI sang S8.
+4. **User interactions:** Chạm thẻ không mở gì (chỉ xem). Match with AI sang S8. Mỗi thẻ hiện số thành viên và 'Needs ... to reach 5'.
 5. **Navigation:** Từ S3 hoặc S15 (See teams). Back về nơi đã đến.
 6. **Important UI constraints:** Tối đa 6 ô mỗi hàng, không cuộn ngang; tên nhóm 1 dòng. Vùng chạm ≥ 48dp, chữ ≥ 14sp; trên màn ≥ 600dp theo mục "Màn rộng".
 
@@ -148,12 +148,12 @@ Mỗi màn có đủ 6 mục: layout, components, states, interactions, navigati
 
 ### S7 Student detail
 
-1. **Layout:** Scaffold(AppBar back, body: SingleChildScrollView → Column, sticky FilledButton).
-2. **Components:** App bar, chip, Button primary.
+1. **Layout:** Scaffold(AppBar back, body: SingleChildScrollView → Column: thẻ hồ sơ, thẻ 'Student info' 4 hàng nhãn-giá trị; sticky FilledButton).
+2. **Components:** App bar, chip, Card, Button primary.
 3. **States:** populated; loading.
 4. **User interactions:** Add to team quay về màn trước và đánh dấu sinh viên đã chọn.
 5. **Navigation:** Từ S4 hoặc S11. Back về màn trước.
-6. **Important UI constraints:** Chip skill xuống dòng (Wrap), không cắt; tên 1 dòng. Vùng chạm ≥ 48dp, chữ ≥ 14sp; trên màn ≥ 600dp theo mục "Màn rộng".
+6. **Important UI constraints:** Giá trị căn phải, nhãn 14sp; tên 1 dòng. Vùng chạm ≥ 48dp, chữ ≥ 14sp; trên màn ≥ 600dp theo mục "Màn rộng".
 
 ### S8 AI matching
 
@@ -178,7 +178,7 @@ Mỗi màn có đủ 6 mục: layout, components, states, interactions, navigati
 1. **Layout:** Scaffold(AppBar back, body: ListView sections, bottom: Column(FilledButton Approve, TextButton Discard (error color))).
 2. **Components:** App bar, ô ngành, chip, Button primary, Button text (destructive), Dialog.
 3. **States:** populated; loading; error.
-4. **User interactions:** Add member sang S11. Approve mở S12 (dialog). Discard mở S17 (dialog).
+4. **User interactions:** Add member sang S11. Nút bỏ thành viên (IconButton 48dp ở mỗi hàng) mở S24. Approve mở S12 (dialog), bị khóa khi nhóm dưới 5 người (S25). Discard mở S17 (dialog).
 5. **Navigation:** Từ S9. Back về S9. (Nhóm ghép tay dùng S20.)
 6. **Important UI constraints:** Hai nút ở đáy cách nhau 8dp; Discard cao 48dp. Vùng chạm ≥ 48dp, chữ ≥ 14sp; trên màn ≥ 600dp theo mục "Màn rộng".
 
@@ -281,3 +281,38 @@ Mỗi màn có đủ 6 mục: layout, components, states, interactions, navigati
 5. **Navigation:** Từ S16 khi tìm không ra. Back về S16.
 6. **Important UI constraints:** Thông báo nêu nguyên nhân ("No student found") và cách xử lý (Clear search). Vùng chạm ≥ 48dp, chữ ≥ 14sp; trên màn ≥ 600dp theo mục "Màn rộng".
 
+### S22 Import class list
+
+1. **Layout:** Scaffold(AppBar back, body: ListView(padding 16, separated 16): Card file, Card 'Columns detected' (5 hàng nhãn-giá trị), Card ghi chú; bottom: FilledButton sticky).
+2. **Components:** App bar (back), Card, list row, Button primary.
+3. **States:** default; loading (đang nhập, nút hiện tiến trình); error (sai định dạng hoặc thiếu cột: dùng chung mẫu lỗi S19, thiết kế sau).
+4. **User interactions:** Import sang S23. Cột bắt buộc: MSSV, họ tên, lớp, nhóm, ngành.
+5. **Navigation:** Từ S2 (nút Import class list). Back về S2.
+6. **Important UI constraints:** Nút nêu số dòng sẽ nhập ("Import 42 students"). Vùng chạm ≥ 48dp, chữ ≥ 14sp; trên màn ≥ 600dp theo mục "Màn rộng".
+
+### S23 Import result
+
+1. **Layout:** Như S3: Scaffold(AppBar back, Column: Row(3 × Expanded stat), ListTile × 2, Card ghi chú; bottom: FilledButton sticky).
+2. **Components:** App bar (back), Card, list row, Button primary.
+3. **States:** populated; empty (không còn SV khả dụng: chuyển S14).
+4. **User interactions:** Chạm hàng sang S4 hoặc S5. Open Class A sang S3.
+5. **Navigation:** Từ S22. Back về S22.
+6. **Important UI constraints:** SV đã có nhóm và nhóm đủ 6 người bị ẩn tự động, ghi chú nói rõ điều đó. Vùng chạm ≥ 48dp, chữ ≥ 14sp; trên màn ≥ 600dp theo mục "Màn rộng".
+
+### S24 Remove member dialog
+
+1. **Layout:** Như S17: S10 phía sau, Dialog giữa màn.
+2. **Components:** Dialog, Button text, Button text (destructive).
+3. **States:** default.
+4. **User interactions:** Cancel đóng dialog. Remove bỏ thành viên và mở S25 khi nhóm còn dưới 5 người.
+5. **Navigation:** Từ nút bỏ thành viên ở S10 hoặc S20. Cancel về màn trước.
+6. **Important UI constraints:** Nút Remove màu đỏ, nêu hậu quả ("Team will have 4 members."). Vùng chạm ≥ 48dp, chữ ≥ 14sp; trên màn ≥ 600dp theo mục "Màn rộng".
+
+### S25 Approve blocked
+
+1. **Layout:** Như S10: hàng ngành 48dp (có một ô trống nét đứt), Members (còn 3 hàng), banner lỗi, bottom: FilledButton Approve (disabled), TextButton Discard.
+2. **Components:** App bar (back), ô ngành (đầy/trống), Button tonal (Add member), banner lỗi, Button primary (disabled), Button text (destructive).
+3. **States:** error (dưới 5 người). Đủ 5 người thì trở lại S10.
+4. **User interactions:** Add member sang S11. Bỏ thêm người mở lại S24. Approve không bấm được.
+5. **Navigation:** Từ S24 (Remove). Back về S10.
+6. **Important UI constraints:** Lỗi nêu nguyên nhân và con số ("Needs at least 5 members (now 4)"), có biểu tượng và màu (không chỉ màu); Approve disabled phải có `Semantics` giải thích. Vùng chạm ≥ 48dp, chữ ≥ 14sp; trên màn ≥ 600dp theo mục "Màn rộng".

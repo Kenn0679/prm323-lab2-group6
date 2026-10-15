@@ -5,7 +5,7 @@
 | Mục | Nội dung |
 |---|---|
 | Sinh viên / MSSV | `TODO` |
-| Đề tài | TeamUp EXE: ứng dụng cho mentor/giảng viên EXE, AI gợi ý ghép sinh viên chưa có nhóm vào nhóm đang thiếu 1-2 thành viên chuyên môn (nhóm 4-6 người, nhiều ngành); mentor duyệt. Từ 06/10/2026 (R8) đổi từ hướng sinh viên sang hướng mentor, xem mục 6 dòng 10. Giảng viên duyệt đề tài: `TODO` |
+| Đề tài | TeamUp EXE: ứng dụng cho mentor/giảng viên EXE, AI gợi ý ghép sinh viên chưa có nhóm vào nhóm đang thiếu 1-2 thành viên chuyên môn (nhóm 5-6 người, nhiều ngành); mentor duyệt. Từ 06/10/2026 (R8) đổi từ hướng sinh viên sang hướng mentor, xem mục 6 dòng 10. Giảng viên duyệt đề tài: `TODO` |
 | Stitch project | `TODO` dán link (link riêng tư, giảng viên có thể không mở được; ảnh trong `assets/stitch/` là bằng chứng chính) |
 | Tài liệu đầu vào cho Stitch | `design/DESIGN.md` **bản 1** (palette cam và xanh dương, North Star "The Lineup Board" ở lần đầu; đã chỉnh tên và luật nội dung trước R1). Bản 2 (bỏ xanh dương, nền trắng, thẻ viền) soạn ngày 05/10/2026 sau khi xem output; được đưa thẳng vào master prompt P16 (R7) nên chỉ áp dụng cho Stitch khi R7 được chạy. Xem mục 6, dòng 9 |
 
@@ -16,6 +16,8 @@
 - R9 (đã chạy): 3 prompt, mỗi prompt 6 frame, tổng 18 frame, trong `ai/stitch-prompts-r9.md`; bản export gồm 18 màn trong `assets/stitch/mentor-v2/`. Còn lại: dán prompt nguyên văn vào mục 3 và điền ngày chạy thật.
 - R10 (đã chạy, ảnh thêm vào repo ngày 11/10/2026): 1 prompt 3 frame trong `ai/stitch-prompts-r10.md` (Sign in - error, Proposal detail - hand-built, Add student - no results) để flow và màn khớp nhau; 3 màn nằm ở `assets/stitch/mentor-v2/s19`-`s21`. Nhờ đó tôi bỏ bước "nhận mã" khỏi Flow A và persona, và đổi S13 thành "Tutor Match, 6 of 6" cho khớp S11.
 - Figma (11/10/2026): tôi cho Claude dựng file Figma mới (https://www.figma.com/design/X5WcaK4s20AYF53cvRdouV) qua công cụ Figma. Cách làm: render code HTML của 21 màn Stitch rồi chuyển thành layer Figma (không vẽ lại bằng tay); giữ bảng màu của Stitch và sửa `DESIGN.md`, handoff cho khớp. **Wireframe (page 02) được suy ra từ layout Final UI sau khi Stitch sinh ra**, không phải bản phác trước khi dùng AI. Prototype có hai tương tác mô phỏng: chạm tiêu đề "Finding teammates" để giả lập mất mạng (S18), và loading tự chuyển sang kết quả sau 3-4 giây. PNG đã xuất vào `assets/figma/01-…06-` (11/10/2026).
+- 13/10/2026: tôi nhờ Claude phản biện `ux/persona.md` theo persona-guideline và yêu cầu nghiệp vụ mới (nhóm tối thiểu 5, tối đa 6; mentor import MSSV, class name, group, major; app tự lọc sinh viên đã có nhóm); xem Critique C ở mục 5 và `ai/ai-critique-3.md`.
+- 14/10/2026: tôi duyệt phản biện và Claude dựng thêm 4 màn S22-S25 (tổng 25 màn) trong Figma, sửa chữ S02, S03, S05, S07, S10 (bỏ skills, availability); xem `ai/ai-critique-3.md` mục 9.
 - Cần hoàn thiện trước khi nộp: ảnh trong `assets/stitch/`, các ô `TODO`, mục 6 và checklist mục 8.
 
 ## 1. Khai báo công cụ AI
@@ -306,6 +308,14 @@ Hạn chế: Critique A không gắn tên heuristic Nielsen cho từng lỗi. D�
 
 Lưu ý: dòng 7 là ước lượng bằng mắt, cần đo số trong Figma (tương phản 4.5:1 cho chữ thường, 3:1 cho chữ lớn và control).
 
+### Critique C - phản biện persona (13/10/2026)
+
+- Yêu cầu của tôi (nguyên văn): xem `ai/ai-critique-3.md`, mục đầu.
+- Claude chấm persona cũ khoảng 41/100 theo checklist của guideline, sau khi sửa khoảng 67/100 (ước lượng, chưa có giảng viên chấm). Phát hiện chính: nhóm phải là 5-6 chứ không phải 4-6, thiếu import và lọc tự động, AI không có dữ liệu kỹ năng và lịch, thiếu 5/12 trường lõi, chưa có bằng chứng thật.
+- Tôi giữ: 1 persona chính (kèm giải trình), quy tắc 5-6, dữ liệu import 5 cột; "kỹ năng" chỉ là ngành (Major), bỏ kỹ năng và lịch.
+- Vòng 2 (13/10/2026, mục 6-8 của `ai/ai-critique-3.md`): Claude rà màn hình, tự phản biện 8 phát hiện nháp, giữ lại đề xuất **thêm 4 màn** (S22 Import, S23 Import result, S24 Remove member dialog, S25 Approve blocked) và **sửa 4 màn** (S03, S05, S07, S10: bỏ chữ skills/availability, thêm chip trạng thái, nút bỏ thành viên). Chưa dựng gì trong Figma; chờ tôi duyệt và xác nhận cách hiểu "không cần AI".
+- Tôi chưa làm: phỏng vấn, Affinity Board, dựng 4 màn mới.
+
 ## 6. Decision record
 
 Điền cột 2 và 3 bằng suy nghĩ của bạn. Lý do hợp lệ phải nhắc tới persona (Minh), một heuristic, hoặc một ràng buộc thật (phạm vi, thời gian, nền tảng). Cột "Gợi ý lý do" chỉ là bản nháp để bạn tham khảo, giữ lại chỉ khi bạn đồng ý.
@@ -350,6 +360,6 @@ Mỗi iteration phải nhắm một vấn đề có tên, khác các lần khác
 - [ ] Các ô `TODO` đã được điền bằng kết quả thật hoặc xóa kèm lý do.
 - [ ] Decision record có lý do của riêng tôi, không chép nguyên cột "Gợi ý".
 - [ ] Tôi giải thích được ít nhất 2 quyết định và demo được 1 flow nếu bị hỏi 5 phút.
-- [ ] `design/DESIGN.md`, `ux/user-flow.md`, 3 flow và UI Stitch (v5, R9, R10) khớp nhau (21 màn S1-S21). Không có trường MSSV; xác minh sinh viên ngoài phạm vi lab.
+- [ ] `design/DESIGN.md`, `ux/user-flow.md`, 3 flow và UI Stitch (v5, R9, R10) khớp nhau (21 màn S1-S21). Không có trường MSSV ở màn đăng nhập; MSSV chỉ nằm trong dữ liệu import giả định (xem `ux/persona.md`); xác minh sinh viên ngoài phạm vi lab.
 - [ ] Log nói rõ AI ghép nhóm trong lab chỉ là thiết kế giao diện với dữ liệu mẫu, không phải mô hình đã huấn luyện.
 - [ ] Bảng khai báo công cụ đã gồm mọi AI tôi dùng, kể cả ngoài Stitch.

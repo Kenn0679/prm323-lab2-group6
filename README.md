@@ -1,6 +1,6 @@
 # TeamUp EXE (PRM323 Lab 2)
 
-**Chủ đề:** ứng dụng di động cho mentor/giảng viên môn EXE. AI gợi ý ghép sinh viên chưa có nhóm vào các nhóm đang thiếu 1-2 thành viên chuyên môn để mỗi nhóm khởi nghiệp nhỏ đạt 4-6 người, nhiều ngành; mentor duyệt.
+**Chủ đề:** ứng dụng di động cho mentor/giảng viên môn EXE. AI gợi ý ghép sinh viên chưa có nhóm vào các nhóm đang thiếu 1-2 thành viên chuyên môn để mỗi nhóm khởi nghiệp nhỏ đạt 5-6 người, nhiều ngành; mentor duyệt.
 
 **Persona (1 dòng):** Cô Lan, 38 tuổi, giảng viên và mentor phụ trách 3 lớp EXE, dùng điện thoại một tay giữa các tiết, cần ghép nhóm xong trong dưới 5 phút mỗi lớp.
 
@@ -23,7 +23,7 @@
 | Prompt, output, quyết định, iteration | `ai/ai-design-log.md` |
 | Phê bình của AI (bản hướng sinh viên) | `ai/ai-critique-1.md` |
 | Phê bình của AI (bản hướng mentor, 18 màn) | `ai/ai-critique-2.md` |
-| Ảnh chụp mọi bản Stitch (`student-v1/` hướng đầu, `mentor-v2/` hướng cuối, 21 màn) | `assets/stitch/` (mục lục ở `assets/stitch/README.md`) |
+| Ảnh chụp mọi bản Stitch (`student-v1/` hướng đầu, `mentor-v2/` hướng cuối, 21 màn; S22-S25 chỉ có trong Figma) | `assets/stitch/` (mục lục ở `assets/stitch/README.md`) |
 | PNG màn hình final xuất từ Figma | `assets/figma/` |
 | Hướng dẫn dựng app Flutter | `handoff/flutter-handoff.md` |
 | Nguồn và file slide (ppt-master) | `slides/` |
